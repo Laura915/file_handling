@@ -1,6 +1,9 @@
 package com.files;
 
 import java.io.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 import com.files.util.Constants;
 
@@ -55,6 +58,9 @@ public class App
             String newContent = oldContent.replaceAll(oldString, newString);
             writer = new FileWriter(fileToBeModified);
             writer.write(newContent);
+            
+            reader.close();
+            writer.close();
         } catch (IOException e)
         {
             e.printStackTrace();
